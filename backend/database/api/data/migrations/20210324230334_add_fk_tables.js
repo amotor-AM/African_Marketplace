@@ -7,7 +7,7 @@ exports.up = function(knex) {
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("categories")
+        .inTable("category")
   })
 
   .createTable("product_info", tbl => {
