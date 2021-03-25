@@ -20,6 +20,7 @@ module.exports = {
   testing: {
     ...sharedConfig,
     connection: process.env.TESTING_DATABASE_URL,
+    connectionString: pgConnection
   },
   production: {
     ...sharedConfig,
