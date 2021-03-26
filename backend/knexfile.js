@@ -2,6 +2,8 @@ require('dotenv').config()
 
 const pg = require('pg')
 
+const db = 'postgres://sdxxproyywthnn:39944463d8f2eed1e053f19c2026cb66d643782a4667320264811fa5ea5d316d@ec2-54-235-108-217.compute-1.amazonaws.com:5432/d4g09v5f3sfgbl'
+
 if (process.env.DATABASE_URL) {
   pg.defaults.ssl = { rejectUnauthorized: false }
 }
@@ -27,7 +29,7 @@ module.exports = {
     pool: { min: 2, max: 10 },
     // connectionString: pgConnection
     connection: {
-      connectionString: process.env.DATABASE_URL,
+      connectionString: process.env.DATABASE_URL || db,
       ssl: {rejectUnauthorized: false}
     }
   },

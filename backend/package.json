@@ -1,5 +1,5 @@
 {
-  "name": "African Marketplace",
+  "name": "african_marketplace",
   "version": "1.0.0",
   "scripts": {
     "start": "node index.js",
