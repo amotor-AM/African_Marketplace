@@ -18,6 +18,6 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTabelIfExists("category")
+  return knex.schema.dropTableIfExists("category")
     .dropTableIfExists("sellers")
 };
