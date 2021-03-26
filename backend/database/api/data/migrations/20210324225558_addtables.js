@@ -4,9 +4,11 @@ exports.up = function(knex) {
      tbl.increments()
      tbl.text("seller_name")
         .notNullable()
+    tbl.text("password")
+        .notNullable() 
     tbl.text("location")
         .notNullable()
-    tbl.text("photo") 
+    tbl.text("photo")
   })
 
   .createTable("category", tbl => {
