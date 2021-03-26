@@ -26,7 +26,7 @@ export const UserProvider = (props) => {
 
 
   return(
-    <UserAuthContext.Provider value={user}>
+    <UserAuthContext.Provider value={user} displayName="User Sign-In Data">
       {props.children}
     </UserAuthContext.Provider>
   )

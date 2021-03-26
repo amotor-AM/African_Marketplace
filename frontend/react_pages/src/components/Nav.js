@@ -5,7 +5,13 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
   const [products, setProducts] = useContext(ProductContext)
   
-  return (
+  const logout = e => {
+    e.preventDefault();
+    localStorage.removeItem('token');
+    window.location.href = '/';
+}
+  
+return (
     <div className='nav'>
       <h3>African Marketplace</h3>
       <div className='nav-btns'>
@@ -25,10 +31,12 @@ const Nav = () => {
       <Link to= '/add-product' style={{textDecoration:'none'}}>
       <button>New Listing</button>
       </Link>
-
-      <button>Sign Out</button>
+      
+      
+      <button onClick={logout}>Sign Out</button>
+      
       </div>
-      <h3>My Products: {products.length}</h3>
+      <h3>My Listings: {products.length}</h3>
     </div>
   )
 }

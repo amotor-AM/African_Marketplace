@@ -1,17 +1,37 @@
-import axiosWithAuth from '../utils/axiosWithAuth';
-//import user credentials here//
+import React, { useState, useEffect, createContext } from 'react';
+import axios from 'axios';
 
-const setToken = (data) => {
+export const TokenAuthContext = createContext(null)
+
+const initialValues = {
+  username: 'eve.holt@reqres.in',
+  password: 'cityslicka',
+}
+
+export const TokenProvider = (props) => {
   
-  axiosWithAuth().post('https://reqres.in/api/users/2', data)
-  .then(res => {
-    console.log('user login success', res.data);
-    localStorage.setItem('token', res.data.token);
-    
-  })
-  .catch(err => {
-    console.log('user login failed', err)
-  })
-};
+  //add hooks here
+  const [state, setState] = useState(initialValues)
 
-export default setToken;
+  useEffect(() => {
+    postToken()
+  }, [])
+
+  const postToken = () => {
+    axios.post('https://reqres.in/api/login', state)
+    .then(res => {
+      setState(res.data)
+      console.log('user token set', res);
+      localStorage.setItem('token', res.data.token)
+    })
+    .catch(err => console.log('unable to set user token', err));
+  }
+
+
+
+  return(
+    <TokenAuthContext.Provider value={state}>
+      {props.children}
+    </TokenAuthContext.Provider>
+  )
+}
