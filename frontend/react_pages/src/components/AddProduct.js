@@ -2,6 +2,10 @@ import React, { useState, useContext } from 'react'
 import {ProductContext} from '../contexts/ProductListContext';
 import { useHistory } from 'react-router-dom'
 
+//MVP Requirements:
+//make listing for items they want to sell, which will show up to all users
+
+
 const AddProduct = () => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
@@ -9,6 +13,8 @@ const AddProduct = () => {
   const [products, setProducts] = useContext(ProductContext)//contains user product list state
   
   const history = useHistory();
+
+  //need to build onSubmit function that will make post request to general marketplace and display with all other listings
 
   const updateName = e => {
     setName(e.target.value)
@@ -25,7 +31,7 @@ const AddProduct = () => {
   const addProduct = e => {
     e.preventDefault()
     setProducts(prevProducts => [...prevProducts, {name: name, price: price, description: description}])
-    
+    history.push('/product-list');
   }
 
   const cancelEdit = e => {
