@@ -13,8 +13,8 @@ const Nav = () => {
   
 return (
     <div className='nav'>
-      <h3>African Marketplace</h3>
-      <div className='nav-btns'>
+      <h3 style={{color: '#d207d2', fontWeight: 'bold', marginLeft: '15px'}}>african marketplace</h3>
+      <div className='nav-btns' style={{marginRight: '80px'}}>
       
       <Link to= '/' style={{textDecoration:'none'}}>
       <button>Home</button>
@@ -25,7 +25,7 @@ return (
       </Link>
 
       <Link to= '/product-list' style={{textDecoration:'none'}}>
-      <button>My Listings</button>
+      <button>My listings</button>
       </Link>
 
       <Link to= '/add-product' style={{textDecoration:'none'}}>
@@ -35,8 +35,9 @@ return (
       
       <button onClick={logout}>Sign Out</button>
       
+      
       </div>
-      <h3>My Listings: {products.length}</h3>
+      <h4 style={{color: '#d207d2', marginRight: '15px'}}>Items for sale: {products.length}</h4>
     </div>
   )
 }

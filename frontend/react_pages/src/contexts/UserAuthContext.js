@@ -10,6 +10,7 @@ export const UserProvider = (props) => {
   //add hooks here
   const [user, setUser] = useState('')
 
+  //remove useEffect after login form is merged to main branch. only used for testing purposes
   useEffect(() => {
     getUser()
   }, [])

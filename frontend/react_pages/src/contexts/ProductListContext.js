@@ -6,6 +6,7 @@ export const ProductContext = createContext()
 
 export const ProductProvider = (props) => {
   
+  //usestate will eventually include product data from server//
   const [products, setProducts] = useState(data)  
 
   return(

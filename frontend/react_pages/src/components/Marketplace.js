@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import MarketplaceCard from './MarketplaceCard';
 
 //need to allow user to:
 //see relevant prices in various categories to help them set their own prices
@@ -22,16 +23,19 @@ const Marketplace = () => {
 
 
     return (
-      <div className='marketplace-list'>
-        {items.map(product => (
-          <div>
-          <h2>{product.name}</h2>
-          <p>Year:{product.year}</p>
-          <p>Color:{product.color}</p>
-          <span>Pantone_Value: {product.pantone_value}</span>
+      <div>
+        <h2 style={{textAlign: 'center', marginTop: '35px'}}>Marketplace</h2>   
+          <div className='parent'>
+          {items.map(product => (
+          <div className='child'> 
+            <MarketplaceCard 
+              name={product.name} 
+              year={product.year} 
+              color={product.color} 
+              pantone_value={product.pantone_value}/>
           </div>
         ))}
-    
+      </div>
     </div>
     )
   }
