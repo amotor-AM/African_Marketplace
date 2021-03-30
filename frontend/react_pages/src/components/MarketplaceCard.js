@@ -1,18 +1,9 @@
 import React, { useState, useContext } from 'react'
-import { Card, Button, CardGroup } from 'react-bootstrap'
-import {ProductContext} from '../contexts/ProductListContext';
+import { Card } from 'react-bootstrap'
+
 
 const MarketplaceCard = (props) => {
-  const [products, setProducts] = useContext(ProductContext)  
-  const [name, setName] = useState('')
   
-  const updateName = e => {
-    setName(e.target.value)
-  }
-  const addProduct = e => {
-    e.preventDefault()
-    setProducts(prevProducts => [...prevProducts, {name: name, }])
-  }
 return (
   
 <div className='parent'>
@@ -26,12 +17,10 @@ return (
       </Card.Text>
     </Card.Body>
       <small className="text-muted">{props.price}</small>
-   
-    <h4>$10.00</h4>
-    <button className='add-item-btn' onSubmit={addProduct}>Add to Cart</button>
-  </div>
+      <h4>$10.00</h4>
+      <button className='add-item-btn'>Add to Cart</button>
     </div>
-   
+  </div> 
   )
 }
 
