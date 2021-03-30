@@ -14,7 +14,7 @@ server.use(express.json())
 server.use(cookieParser())
 
 server.use('/api/auth', authRouter)
-server.use('api/market', marketRouter)
+server.use('/api/market', marketRouter)
 
 server.use((err, req, res, next) => {
 	res.status(500).json({
@@ -23,4 +23,7 @@ server.use((err, req, res, next) => {
 	})
 })
 
+server.get("/", (req,res)=> {
+	res.json({api:"up"})
+})
 module.exports = server
