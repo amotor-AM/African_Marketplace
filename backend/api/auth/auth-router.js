@@ -5,18 +5,18 @@ const Auth = require("./auth-model")
 
 router.post("/register", async (req, res, next) => {
 	try {
-		const { username, password } = req.body
-
-		if(!username || !password){
+		const { user_name, password, location } = req.body
+		if(!user_name || !password || !location){
 			return res.status(400).json({
-				message: "username and password required"
+				message: "username, password and location required"
 			})
 		} else {
 			const newUser = await Auth.add({
-				username: username,
-				password: await bcrypt.hash(password, 5)
+				user_name: user_name,
+				password: await bcrypt.hash(password, 5),
+				location: location
 			})
-			res.status(201).json(newUser)
+			return res.status(201).json(newUser)
 		}
 	} catch (err) {
 		next(err)
@@ -25,13 +25,13 @@ router.post("/register", async (req, res, next) => {
 
 router.post("/login", async (req, res, next) => {
 	try {
-		const { username, password } = req.body
-		if(!username || !password){
+		const { user_name, password } = req.body
+		if(!user_name || !password){
 			return res.status(400).json({
 				message: "username and password required"
 			})
 		}
-		const user = await Auth.findBy({ username }).first()
+		const user = await Auth.findBy({ user_name }).first()
 		const checkPassword = await bcrypt.compare(password, user ? user.password : "")
 
 		if (!user || !checkPassword){
@@ -41,13 +41,13 @@ router.post("/login", async (req, res, next) => {
 		} else {
 			const token = jwt.sign({
 				subject: user.id,
-				username: user.username
+				user_name: user.user_name
 			}, "keep it secret keep it safe", {expiresIn: "1d"})
 			
 			res.cookie("token", token)
 
 			res.status(200).json({
-				message: `Welcome back ${username}!`,
+				message: `Welcome back ${user_name}!`,
 				token: token
 			})
 		}

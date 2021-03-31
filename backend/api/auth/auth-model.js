@@ -1,4 +1,4 @@
-const db = require("../../knexfile")
+const db = require("../../database/db")
 
 function find(){
 	return db("users")
@@ -19,8 +19,8 @@ function findById(id){
 }
 
 async function add(user){
-	const [id] = await db("users").insert(user)
-	return findById(id)
+	const [newUser] = await db("users").insert(user, "*")
+	return newUser
 }
 
 module.exports = {
