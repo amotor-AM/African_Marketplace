@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginForm from './Login'
 
 //placeholder homepage for testing purposes//
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
     <div>
       <h2 style={{marginTop: '30px'}}>African Marketplace</h2>
       <br></br>
-      <h3>Sign in form will go here</h3>
+      <LoginForm/>
       </div>
 
   )
