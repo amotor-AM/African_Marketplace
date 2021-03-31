@@ -1,33 +1,40 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router'
-import { Link } from 'react-router-dom'
-import LoginForm from './component/Login'
-import RegisterForm from './component/Register'
+import React from 'react';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+
+import Home from './components/Home';
+import Marketplace from './components/Marketplace';
+import ProductList from './components/ProductList';
+import Nav from './components/Nav';
+import AddProduct from './components/AddProduct';
+import {ProductProvider} from './contexts/ProductListContext';
+import {TokenProvider} from './contexts/TokenContext';
+import {UserProvider} from './contexts/UserAuthContext';
+import PrivateRoute from './components/PrivateRoute'
+
 
 function App() {
-  return (
-
   
+  return (
+    <TokenProvider>
+    <UserProvider>
+    <ProductProvider>
+      <Router>
     <div className="App">
-      <button>
-        <Link to='/component/Register' >Register</Link>
-      </button>
-      <button>
-      <Link to='/component/Login'>Login</Link>
-      </button>
-
-      
-        <Route path='/component/Register'>
-          <RegisterForm/>
-        </Route>
-      
-
-        <Route path='/component/Login'>
-          <LoginForm/>
-        </Route>
-
+      <Nav />
+      <Switch>
+        <Route exact path='/' component={Home}/>
+        <Route path='/marketplace' component={Marketplace}/>
+        <PrivateRoute path='/product-list' component={ProductList}/>
+        <Route path='/add-product' component={AddProduct}/>
+      </Switch>
 
     </div>
+    </Router>
+    </ProductProvider>
+    </UserProvider>
+    </TokenProvider>
   );
 }
 
