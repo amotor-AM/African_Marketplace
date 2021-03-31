@@ -13,10 +13,10 @@ export const UserProvider = (props) => {
   //remove useEffect after login form is merged to main branch. only used for testing purposes
   useEffect(() => {
     getUser()
-  }, [])
+  }, []) 
 
   const getUser = () => {
-    axios.get('https://reqres.in/api/users/2')
+    axios.get('http://localhost:5000/api/sellers')
     .then(res => {
       console.log('user data retrieved', res);
       setUser(res.data);

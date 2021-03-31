@@ -53,32 +53,37 @@ const AddProduct = () => {
   }
 
   return(
-    <div className='add-item-form'>
-      <h2 style={{marginTop: '30px'}}>Sell a new product</h2>
+    <div className='add-item-form' >
+      <h2 style={{marginTop: '30px', fontFamily: 'inter'}}>Sell a new product</h2>
       <form onSubmit={addProduct}>
-      <label htmlFor='title'>Title:</label>
-        <input 
+      <label htmlFor='title' style={{fontFamily: 'inter', fontWeight: 'bold'}}>Title:</label>
+        <input style={{textAlign: 'center'}}
           type='text' 
           name='name' 
           value={name}
           placeholder='product name' 
           onChange={updateName}/>
-      <label htmlFor='price'>Price:</label>    
-        <input 
+      <label htmlFor='price' style={{fontFamily: 'inter', fontWeight: 'bold'}}>Price:</label>    
+        <input style={{textAlign: 'center'}}
           type='text' 
           name='price' 
           value={price}
           placeholder='set price' 
           onChange={updatePrice}/>
-      <label htmlFor='description'>Description:</label>      
-        <input 
+      <label htmlFor='description' style={{fontFamily: 'inter', fontWeight: 'bold'}}>Description:</label>      
+        <input style={{textAlign: 'center'}}
           type='text' 
           name='description' 
           value={description}
           placeholder='description of product' 
           onChange={updateDescription}/>
       
-      <select style={{marginTop: '30px', padding: '4px'}}value={category} onChange={updateCategory} id = "dropdown">
+      <select 
+        style={{marginTop: '30px', padding: '4px', fontFamily: 'inter', width: '140px'}}
+        value={category} 
+        onChange={updateCategory} 
+        id = "dropdown"
+        >
         <option value="N/A">--Category--</option>
         <option value={'Produce'}>Produce</option>
         <option value="Livestock">Livestock</option>
@@ -86,7 +91,12 @@ const AddProduct = () => {
         <option value="Home Goods">Home Goods</option>
       </select>
 
-      <select style={{marginTop: '30px', padding: '4px'}}value={location} onChange={updateLocation} id = "dropdown">
+      <select 
+        style={{marginTop: '30px', padding: '4px', fontFamily: 'inter', width: '140px'}}
+        value={location} 
+        onChange={updateLocation} 
+        id = "dropdown"
+        >
         <option value="N/A">--Location--</option>
         <option value={'Nairobi'}>Nairobi</option>
         <option value="Cape Town">Cape Town</option>

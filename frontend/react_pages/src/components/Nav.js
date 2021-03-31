@@ -16,7 +16,7 @@ const Nav = () => {
   
 return (
     <div className='nav'>
-      <h3 style={{color: '#d207d2', fontWeight: 'bold', marginLeft: '15px'}}>african marketplace</h3>
+      <h3 style={{color: 'rgb(5 161 177)', fontWeight: 'bold', marginLeft: '15px', fontFamily: 'i'}}>african marketplace</h3>
       <div className='nav-btns' style={{marginRight: '80px'}}>
       
       <Link to= '/' style={{textDecoration:'none'}}>
@@ -40,8 +40,8 @@ return (
       
       
       </div>
-      {tokenSuccess ? <h4 style={{color: '#d207d2', marginRight: '15px'}}>Items for sale {products.length}</h4> : 
-      <h4 style={{color: '#d207d2', marginRight: '15px'}}>Please sign in</h4>}
+      {tokenSuccess ? <h4 style={{color: 'rgb(5 161 177)', marginRight: '15px', fontFamily: 'inter', fontWeight: 'bold'}}>Items for sale: {products.length}</h4> : 
+      <h4 style={{color: 'rgb(5 161 177)', marginRight: '15px'}}>Please sign in</h4>}
     </div>
   )
 }

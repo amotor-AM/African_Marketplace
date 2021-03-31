@@ -5,7 +5,7 @@ import LoginForm from './Login'
 const Home = () => {
   return(
     <div>
-      <h2 style={{marginTop: '30px'}}>African Marketplace</h2>
+      <h2 style={{marginTop: '30px', fontFamily: 'inter'}}>African Marketplace</h2>
       <br></br>
       <LoginForm/>
       </div>

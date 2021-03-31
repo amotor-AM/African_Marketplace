@@ -28,24 +28,44 @@ const Marketplace = () => {
 
     return (
       <div>
-        <h2 style={{textAlign: 'center', marginTop: '35px'}}>Marketplace</h2> 
-          <form>
+        <h2 style={{textAlign: 'center', marginTop: '35px', fontFamily: 'inter'}}>Marketplace</h2> 
+          
+          <form style={{fontFamily: 'inter'}}>
           <select style={{marginTop: '30px', marginRight: '15px', padding: '4px'}}value='' id = "dropdown">
           <option value="N/A">--Category--</option>
-          <option value={'Produce'}>Produce</option>
-          <option value="Livestock">Livestock</option>
-          <option value="Electronics">Electronics</option>
-          <option value="Home Goods">Home Goods</option>
+          <option value={'Chicken'}>Chicken</option>
+          <option value="Beef">Beef</option>
+          <option value="Fish">Fish</option>
+          <option value="Sweets">Sweets</option>
+          <option value="Cookies">Cookies</option>
+          <option value="Beans">Beans</option>
+          <option value="Rice">Rice</option>
+          <option value="Corn">Corn</option>
+          <option value="Flour">Flour</option>
+          <option value="Spice">Spice</option>
+          <option value="Pepper">Pepper</option>
+          <option value="Cereals">Cereals</option>
+          <option value="Maize">Maize</option>
+          <option value="Fruit">Fruit</option>
+          <option value="Peas">Peas</option>
+          <option value="Carrot">Carrot</option>
+          <option value="Root Vegetable">Root Vegetable</option>
+          <option value="Seed / Nut">Seed / Nut</option>
+          <option value="Other Vegetable">Other Vegetable</option>
+          <option value="Other">Other</option>
+
         </select>
 
           <select style={{marginTop: '30px', padding: '4px'}}value='' id = "dropdown">
           <option value="N/A">--Location--</option>
-          <option value={'Nairobi'}>Nairobi</option>
-          <option value="Cape Town">Cape Town</option>
+          <option value='Kinshasa'>Kinshasa</option>
           <option value="Lagos">Lagos</option>
-          <option value="Accra"></option>
+          <option value="Cairo">Cairo</option>
+          <option value="Johannesburg">Johannesburg</option>
+          <option value="Ekurhuleni">Ekurhuleni</option>
         </select>
       </form>
+      
       {loading ? <h2 style={{color: 'red'}}>Loading..please wait</h2> : null}
         <div className='parent'>
           {items.map(product => (

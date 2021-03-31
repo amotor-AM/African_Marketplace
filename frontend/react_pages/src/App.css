@@ -1,18 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+
 .App {
   margin: 0 auto;
   text-align: center;
-  background-color: #d7e9fa;
   background-size: cover;
   height: 100vh;
 }
 
 body {
-margin: 0;
+  margin: 0;
 }
 
 html {
-margin: 0 auto;
-text-align: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .nav {
@@ -52,25 +54,47 @@ text-align: center;
   margin-bottom: 8px;
   width: 300px;
   height: 50px;
+  border: none;
+  border-radius: 14px;
+  background-color: #efefef;
 }
 
 .add-item-btn {
-  background-color: rgb(210, 7, 210);
+  background-color: rgb(0 42 128 / 82%);
   border: none;
   border-radius: 16px;
   color: white;
   padding: 5px;
-  margin-top: 30px;
-  width: 150px;
+  margin-top: 45px;
+  width: 120px;
+  font-family: 'inter';
 }
 
 .add-item-btn:hover {
   background-color: black;
   border: none;
   border-radius: 16px;
-  color: rgb(243, 247, 7);
-  margin-top: 30px;
-  width: 150px;
+  color: white;
+  margin-top: 45px;
+  width: 120px;
+}
+
+.add-cart-btn {
+  background-color: rgb(0 42 128 / 82%);
+  border: none;
+  border-radius: 16px;
+  color: white;
+  padding: 5px;
+  width: 120px;
+  font-family: 'inter';
+}
+
+.add-cart-btn:hover {
+  background-color: black;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  width: 120px;
 }
 
 .add-item-form form{
@@ -81,37 +105,45 @@ text-align: center;
   margin: 0 auto;
   margin-top: 50px;
   width: 600px;
+  border: 1px solid black;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: white;
 }
 
 .parent {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 50px;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #d7e9fa;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;  
+}
 
-  .child {
-    /* percent per item in row. 
-    33% = limit to 3 per row. */
-    flex: 0 0 33.3333%; 
-    margin-bottom: 20px;
-    
-  }
+.child {
+  /* percent per item in row. 
+  33% = limit to 3 per row. */
+  flex: 0 0 33.3333%; 
+  margin-bottom: 20px;  
+}
 
-  .parents {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 50px;
-    align-items: center;
-    justify-content: space-around;
-  }
+.parents {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: space-around;
+}
 
-  .children {
-    flex: 0 0 18%; 
-    
-    margin-bottom: 20px;
-  }
+.children {
+  flex: 0 0 18%;
+  margin-bottom: 20px;
+}
 
-
+.add-cart {
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  margin-left: 85px;
+  margin-right: 85px;
+}
