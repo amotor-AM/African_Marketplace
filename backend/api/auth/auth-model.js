@@ -1,4 +1,4 @@
-const db = require("../../database/api/data/config")
+const db = require("../../knexfile")
 
 function find(){
 	return db("users")
