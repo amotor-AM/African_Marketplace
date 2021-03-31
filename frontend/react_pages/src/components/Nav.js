@@ -1,14 +1,17 @@
 import React, {useState, useContext} from 'react';
 import {ProductContext} from '../contexts/ProductListContext'
+import {TokenAuthContext} from '../contexts/TokenContext'
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
   const [products, setProducts] = useContext(ProductContext)
+  const [tokenSuccess, setTokenSuccess] = useContext(TokenAuthContext)
   
   const logout = e => {
     e.preventDefault();
     localStorage.removeItem('token');
-    window.location.href = '/';
+    setTokenSuccess(false)
+    
 }
   
 return (
@@ -37,7 +40,8 @@ return (
       
       
       </div>
-      <h4 style={{color: '#d207d2', marginRight: '15px'}}>Items for sale: {products.length}</h4>
+      {tokenSuccess ? <h4 style={{color: '#d207d2', marginRight: '15px'}}>Items for sale {products.length}</h4> : 
+      <h4 style={{color: '#d207d2', marginRight: '15px'}}>Please sign in</h4>}
     </div>
   )
 }

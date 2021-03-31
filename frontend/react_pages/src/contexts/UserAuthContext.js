@@ -18,7 +18,7 @@ export const UserProvider = (props) => {
   const getUser = () => {
     axios.get('https://reqres.in/api/users/2')
     .then(res => {
-      console.log('user logged in success', res);
+      console.log('user data retrieved', res);
       setUser(res.data);
     })
     .catch(err => console.log('unable to retrieve user info', err));
@@ -27,7 +27,7 @@ export const UserProvider = (props) => {
 
 
   return(
-    <UserAuthContext.Provider value={user} displayName="User Sign-In Data">
+    <UserAuthContext.Provider value={user} displayName="User Data">
       {props.children}
     </UserAuthContext.Provider>
   )

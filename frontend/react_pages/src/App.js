@@ -11,7 +11,7 @@ import AddProduct from './components/AddProduct';
 import {ProductProvider} from './contexts/ProductListContext';
 import {TokenProvider} from './contexts/TokenContext';
 import {UserProvider} from './contexts/UserAuthContext';
-/* import PrivateRoute from './components/PrivateRoute' */
+import PrivateRoute from './components/PrivateRoute'
 
 function App() {
   
@@ -23,15 +23,11 @@ function App() {
     <div className="App">
       <Nav />
       <Switch>
-      <Route exact path='/' component={Home}/>
-      <Route path='/marketplace' component={Marketplace}/>
-      {/*PrivateRoute will be used below*/}
-      <Route path='/product-list' component={ProductList}/>
-      <Route path='/add-product' component={AddProduct}/>
-      
-      
+        <Route exact path='/' component={Home}/>
+        <Route path='/marketplace' component={Marketplace}/>
+        <PrivateRoute path='/product-list' component={ProductList}/>
+        <Route path='/add-product' component={AddProduct}/>
       </Switch>
-    
     </div>
     </Router>
     </ProductProvider>

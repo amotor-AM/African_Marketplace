@@ -12,13 +12,13 @@ const AddProduct = () => {
   const [description, setDescription] = useState('')
   const [category, setCategory] = useState('')
   const [location, setLocation] = useState('')
-  const [products, setProducts] = useContext(ProductContext)//contains user product list state
+  const [products, setProducts] = useContext(ProductContext)//contains user product list in state
   
   const history = useHistory();
   const productLink = () => history.push('/product-list');//invoked on form submit
   const homeLink = () => history.push('/');//invoked on form submit
 
-  //need to build onSubmit function that will make post request to general marketplace and display with all other listings
+  //need to build onSubmit function that will invoke an axios put request to general marketplace and display with all other listings
 
   const updateName = e => {
     setName(e.target.value)

@@ -1,12 +1,15 @@
 import React, { useContext } from 'react'
-import UserProduct from './UserCard';
+import axios from 'axios'
+
+import UserProductCard from './ProductCard';
 import {ProductContext} from '../contexts/ProductListContext';
 
 //need to add edit and delete functionality to allow user to manage personal listings
 
 const UserProductList = () => {
-  const [products]= useContext(ProductContext)
+  const [products, setProducts]= useContext(ProductContext)
    
+  
 
   return (
     <div>
@@ -14,13 +17,14 @@ const UserProductList = () => {
       <div className="parents">
       {products.map(product => (
         <div className="children">
-          <UserProduct 
+          <UserProductCard
               name={product.name} 
               price={product.price} 
               description={product.description}
               category={product.category}
               location={product.location} 
-              key={product.id}/>
+              key={product.id}
+              />
             </div>
           ))}
       </div>
