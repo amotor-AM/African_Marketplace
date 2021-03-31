@@ -13,6 +13,7 @@ import {TokenProvider} from './contexts/TokenContext';
 import {UserProvider} from './contexts/UserAuthContext';
 import PrivateRoute from './components/PrivateRoute'
 
+
 function App() {
   
   return (
@@ -28,6 +29,7 @@ function App() {
         <PrivateRoute path='/product-list' component={ProductList}/>
         <Route path='/add-product' component={AddProduct}/>
       </Switch>
+
     </div>
     </Router>
     </ProductProvider>
