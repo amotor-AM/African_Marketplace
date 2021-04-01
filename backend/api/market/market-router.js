@@ -24,14 +24,14 @@ router.get("/:id", async (req, res, next) => {
 	}
 })
 
-router.post("/", async (req, res, next) => {
+router.post("/", async (req, res, next) => { //check that user exists
 	try {
-		const newItem = await Market.add(req.body)
-		if (!req.body.product_name || !req.body.seller_price || !req.body.qty || !req.body.description){
+		if (!req.body.product_name || !req.body.category_name || !req.body.seller_price || !req.body.qty || !req.body.description || !req.body.seller_name || !req.body.location){
 			return res.status(400).json({
-				message: "product name, price, quantity and description are required"
+				message: "product name, category, price, quantity, description, name and location are required"
 			})
 		}
+		const newItem = await Market.add(req.body)
 		res.status(201).json(newItem)
 	} catch (err) {
 		next(err)
@@ -46,9 +46,9 @@ router.put("/:id", async (req, res, next) => {
 				message: "Item not found"
 			})
 		}
-		if (!req.body.product_name || !req.body.seller_price || !req.body.qty || !req.body.description){
+		if (!req.body.product_name || !req.body.category_name || !req.body.seller_price || !req.body.qty || !req.body.description || !req.body.seller_name || !req.body.location){
 			return res.status(400).json({
-				message: "product name, price, quantity and description are required"
+				message: "product name, category, price, quantity, description, name and location are required"
 			})
 		}
 		res.status(200).json(item)
