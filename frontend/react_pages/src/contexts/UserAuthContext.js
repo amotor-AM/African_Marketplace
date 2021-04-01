@@ -16,7 +16,7 @@ export const UserProvider = (props) => {
   }, []) 
 
   const getUser = () => {
-    axios.get('http://localhost:5000/api/sellers')
+    axios.get('https://africanmarketplaceunit4.herokuapp.com/users')
     .then(res => {
       console.log('user data retrieved', res);
       setUser(res.data);

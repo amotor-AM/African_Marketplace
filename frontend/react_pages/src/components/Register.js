@@ -1,36 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import axios from 'axios'
+import '../login.css'
+import { useHistory } from 'react-router-dom'
+import {AuthContext} from '../contexts/AuthContext'
 
 
 
 export default function RegisterForm() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [accpetTerms, setAccpetTerms] = useState(false);
+    const [registercreds, setRegisterCreds] = useContext(AuthContext);
+    const [tos, setTos] = useState(false);
+
+    const history = useHistory()
+
+    const handleChange = e => {
+        setRegisterCreds({
+        ...registercreds,
+        [e.target.name]: e.target.value
+        }
+      )} 
+
+    const handleCheck = e => {
+        setTos({ 
+         ...tos, 
+        [e.target.name]: e.target.checked }
+      )}  
 
     const handleSubmit = e => {
-        console.log(`email:${email}
-            password:${password}
-            accpetTerms:${accpetTerms}`
-            
-        )
-            e.preventDefault();
-    }
+        e.preventDefault()
+        axios.post('https://africanmarketplaceunit4.herokuapp.com/register', registercreds)
+          .then(res => {
+            console.log('user has registered successfully', res.data)
+            history.push('/') 
+          })
+          .catch(err => {
+            console.log('user registration failed', err)     
+          })
+        } 
     
-
+       
 
 
     return (
         <div className="login">
-            <form onSubmit={handleSubmit}>
+            <form className='form' onSubmit={handleSubmit}>
                 <h1>Create Account</h1>
             <label>
-                Email:
+                Username:
                 <input 
-                    name='email'
-                    type='email'
+                    name='user_name'
+                    type='text'
                     autoFocus
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
+                    value={registercreds.user_name}
+                    onChange={handleChange}
                     required/>
             </label>
 <br/>
@@ -39,24 +60,24 @@ export default function RegisterForm() {
                 <input
                     name='password'
                     type='password'
-                    value={password}
-                    onChange={e => setPassword(e.target.value)}
+                    value={registercreds.password}
+                    onChange={handleChange}
                     required/>
            </label>
 <br/>
            <label >
                Terms
                <input
-                    name='accpetTerms'
+                    name='tos-checked'
                     type='checkbox'
-                    value={accpetTerms}
-                    onChange={e => setAccpetTerms(e.target.value)}
+                    value={tos}
+                    onChange={handleCheck}
                     required
                     />
 
            </label>
 <br/>
-            <button>Submit</button>
+            <button style={{display:'inline-block',fontSize: '0.8em', backgroundColor:'#ed4933', color:'#ffffff', cursor: 'pointer', fontWeight:'600', padding:'0 2.75em' ,  letterSpacing:'0.225em', fontSizeAdjust: '0.8em', textTransform:'uppercase'}}>Submit</button>
             
             </form>
         </div>

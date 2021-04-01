@@ -27,10 +27,10 @@ const Marketplace = () => {
 
 
     return (
-      <div>
+      <div className="marketplace">
         <h2 style={{textAlign: 'center', marginTop: '35px', fontFamily: 'inter'}}>Marketplace</h2> 
           
-          <form style={{fontFamily: 'inter'}}>
+          <form className='marketplace-form' style={{fontFamily: 'inter'}}>
           <select style={{marginTop: '30px', marginRight: '15px', padding: '4px'}}value='' id = "dropdown">
           <option value="N/A">--Category--</option>
           <option value={'Chicken'}>Chicken</option>

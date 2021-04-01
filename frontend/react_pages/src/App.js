@@ -9,7 +9,7 @@ import ProductList from './components/ProductList';
 import Nav from './components/Nav';
 import AddProduct from './components/AddProduct';
 import {ProductProvider} from './contexts/ProductListContext';
-import {TokenProvider} from './contexts/TokenContext';
+import {AuthProvider} from './contexts/AuthContext';
 import {UserProvider} from './contexts/UserAuthContext';
 import PrivateRoute from './components/PrivateRoute'
 
@@ -17,7 +17,7 @@ import PrivateRoute from './components/PrivateRoute'
 function App() {
   
   return (
-    <TokenProvider>
+    <AuthProvider>
     <UserProvider>
     <ProductProvider>
       <Router>
@@ -34,7 +34,7 @@ function App() {
     </Router>
     </ProductProvider>
     </UserProvider>
-    </TokenProvider>
+    </AuthProvider>
   );
 }
 

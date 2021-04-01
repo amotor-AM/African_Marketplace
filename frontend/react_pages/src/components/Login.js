@@ -2,34 +2,34 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios'
 import '../login.css'
 import { useHistory } from 'react-router-dom'
-import {TokenAuthContext} from '../contexts/TokenContext'
+import {AuthContext} from '../contexts/AuthContext'
 
 export default function LoginForm() {
-    const [auth, setAuth] = useContext(TokenAuthContext)
-    const [tokenSuccess, setTokenSuccess] = useContext(TokenAuthContext)
+    const [logincreds, setLoginCreds] = useContext(AuthContext)
+    const [tokenSuccess, setTokenSuccess] = useContext(AuthContext)
     const history = useHistory()
     /* const [password, setPassword] = useState('') */
     
 
     const handleChange = e => {
-        setAuth({
-          ...auth,
+        setLoginCreds({
+          ...logincreds,
           [e.target.name]: e.target.value
         }
       )} 
     
     const handleSubmit = e => {
         e.preventDefault()
-        axios.post('http://localhost:5000/login', auth)
+        axios.post('https://africanmarketplaceunit4.herokuapp.com/login', logincreds)
           .then(res => {
-            console.log('user signed in successfully', res.data, auth)
+            console.log('user signed in successfully', res.data, logincreds)
             localStorage.setItem('token', res.data.token)
             setTokenSuccess(true)
             history.push('/product-list')
           })
           .catch(err => {
             alert('incorrect username and/or password, please try again', err)
-            console.log('error loggin in', err.message, auth)
+            console.log('error loggin in', err.message, logincreds)
             setTokenSuccess(false)
             
           })
@@ -38,7 +38,7 @@ export default function LoginForm() {
 
     return (
         <div className="login">
-            <form onSubmit={handleSubmit}>
+            <form className='form' onSubmit={handleSubmit}>
                 <h1>Login</h1>
             <label>
                 Username:
@@ -46,7 +46,7 @@ export default function LoginForm() {
                     name='user_name'
                     type='text'
                     autoFocus
-                    value={auth.username}
+                    value={logincreds.user_name}
                     onChange={handleChange}
                     required/>
             </label>
@@ -56,7 +56,7 @@ export default function LoginForm() {
                 <input
                     name='password'
                     type='password'
-                    value={auth.password}
+                    value={logincreds.password}
                     onChange={handleChange}
                     required/>
            </label>
