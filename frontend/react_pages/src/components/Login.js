@@ -61,7 +61,7 @@ export default function LoginForm() {
                     required/>
            </label>
 <br/>
-            <button>Submit</button>
+            <button style={{display:'inline-block',fontSize: '0.8em', backgroundColor:'#ed4933', color:'#ffffff', cursor: 'pointer', fontWeight:'600', padding:'0 2.75em' ,  letterSpacing:'0.225em', fontSizeAdjust: '0.8em', textTransform:'uppercase'}}>Submit</button>
             
             </form>
         </div>

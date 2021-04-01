@@ -16,7 +16,7 @@ const Nav = () => {
   
 return (
     <div className='nav'>
-      <h3 style={{color: 'rgb(5 161 177)', fontWeight: 'bold', marginLeft: '15px', fontFamily: 'i'}}>african marketplace</h3>
+      <h3 style={{color: 'white', fontWeight: '800', marginLeft: '15px', fontFamily: 'sans-serif', textTransform:'uppercase', letterSpacing: '0.225em', fontSize: '15pt'}}>african marketplace</h3>
       <div className='nav-btns' style={{marginRight: '80px'}}>
       
       <Link to= '/' style={{textDecoration:'none'}}>
