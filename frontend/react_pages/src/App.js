@@ -26,7 +26,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route path='/marketplace' component={Marketplace}/>
-        <PrivateRoute path='/product-list' component={ProductList}/>
+        <Route path='/product-list' component={ProductList}/>
         <Route path='/add-product' component={AddProduct}/>
       </Switch>
 

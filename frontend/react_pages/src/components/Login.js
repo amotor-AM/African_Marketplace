@@ -20,16 +20,16 @@ export default function LoginForm() {
     
     const handleSubmit = e => {
         e.preventDefault()
-        axios.post('http://localhost:5000/api/login', auth)
+        axios.post('http://localhost:5000/login', auth)
           .then(res => {
-            console.log('user signed in successfully', res.data)
+            console.log('user signed in successfully', res.data, auth)
             localStorage.setItem('token', res.data.token)
             setTokenSuccess(true)
             history.push('/product-list')
           })
           .catch(err => {
             alert('incorrect username and/or password, please try again', err)
-            console.log('error loggin in', err.message)
+            console.log('error loggin in', err.message, auth)
             setTokenSuccess(false)
             
           })

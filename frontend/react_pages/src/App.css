@@ -137,13 +137,13 @@ html {
   flex-wrap: wrap;
   margin-top: 50px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .children {
   flex: 0 0 18%;
-  margin-bottom: 20px;
-  margin-right: 100px;
+  margin-bottom: 10px;
+  
 }
 
 .add-cart {
