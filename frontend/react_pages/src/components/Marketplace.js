@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import axiosWithAuth from '../utils/axiosWithAuth'
 import MarketplaceCard from './MarketplaceCard';
 
 //need to allow user to:
@@ -10,11 +10,10 @@ const Marketplace = () => {
   const [loading, setLoading] = useState(true)
   //need to change get request to marketplace items from server
   const getMarketItems = () => {
-    axios.get('https://reqres.in/api/unknown')
-    
+    axiosWithAuth().get('/api/market/products')
       .then(res => {
         console.log('retrieved marketplace items', res)
-        setItems(res.data.data)
+        setItems(res)
         setLoading(false)
       })
       .catch(err => console.log('unable to retrieve marketplace items', err))

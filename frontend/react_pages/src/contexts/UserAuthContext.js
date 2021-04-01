@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react';
-import axios from 'axios';
+import axiosWithAuth from '../utils/axiosWithAuth'
 
 
 export const UserAuthContext = createContext(null)
@@ -16,12 +16,12 @@ export const UserProvider = (props) => {
   }, []) 
 
   const getUser = () => {
-    axios.get('https://africanmarketplaceunit4.herokuapp.com/users')
+    axiosWithAuth().get('/api/market')
     .then(res => {
-      console.log('user data retrieved', res);
+      console.log('market user data retrieved', res);
       setUser(res.data);
     })
-    .catch(err => console.log('unable to retrieve user info', err));
+    .catch(err => console.log('unable to market retrieve user info', err));
   }
 
 

@@ -8,9 +8,7 @@ const Home = () => {
       <h2 style={{marginTop: '30px', fontFamily: 'inter'}}>African Marketplace</h2>
       <br></br>
       <LoginForm/>
-      <br></br>
-      <RegisterForm/>
-      </div>
+    </div>
 
   )
 }

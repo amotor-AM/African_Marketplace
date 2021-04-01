@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import axios from 'axios'
+import axiosWithAuth from '../utils/axiosWithAuth'
 import '../login.css'
 import { useHistory } from 'react-router-dom'
 import {AuthContext} from '../contexts/AuthContext'
@@ -20,7 +20,7 @@ export default function LoginForm() {
     
     const handleSubmit = e => {
         e.preventDefault()
-        axios.post('https://africanmarketplaceunit4.herokuapp.com/login', logincreds)
+        axiosWithAuth().post('/api/auth/login', logincreds)
           .then(res => {
             console.log('user signed in successfully', res.data, logincreds)
             localStorage.setItem('token', res.data.token)

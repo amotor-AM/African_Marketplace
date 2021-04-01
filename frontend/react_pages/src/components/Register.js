@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import axios from 'axios'
+import axiosWithAuth from '../utils/axiosWithAuth'
 import '../login.css'
 import { useHistory } from 'react-router-dom'
 import {AuthContext} from '../contexts/AuthContext'
@@ -27,7 +27,7 @@ export default function RegisterForm() {
 
     const handleSubmit = e => {
         e.preventDefault()
-        axios.post('https://africanmarketplaceunit4.herokuapp.com/register', registercreds)
+        axiosWithAuth().post('/api/auth/register', registercreds)
           .then(res => {
             console.log('user has registered successfully', res.data)
             history.push('/') 
@@ -65,6 +65,15 @@ export default function RegisterForm() {
                     required/>
            </label>
 <br/>
+            <label>
+                Location:
+                <input
+                    name='location'
+                    type='text'
+                    value={registercreds.location}
+                    onChange={handleChange}
+                    required/>
+           </label>
            <label >
                Terms
                <input

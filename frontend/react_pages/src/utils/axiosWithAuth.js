@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const axiosWithAuth = () => {
-  const token = localStorage.getItem('authToken')
+  const token = localStorage.getItem('token')
   
   return axios.create({
     //update base url to server url
-    baseURL: "https://reqres.in/api/",
+    baseURL: "https://africanmarketplaceunit4.herokuapp.com",
     headers: { Authorization: token }
   
   })

@@ -10,7 +10,7 @@ export const AuthProvider = (props) => {
   
   //add hooks here
   const [logincreds, setLoginCreds] = useState({user_name: '', password: ''})//value={logincreds.username} && {logincreds.password}//
-  const [registercreds, setRegisterCreds] = useState({user_name: '', password: ''})//value={}
+  const [registercreds, setRegisterCreds] = useState({user_name: '', password: '', location: ''})//value={}
   const [tokenSuccess, setTokenSuccess] = useState(false)
 
   
