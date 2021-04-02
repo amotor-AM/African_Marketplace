@@ -9,7 +9,7 @@ const restricted = async (req, res, next) => {
 			})
 		}
 
-		jwt.verify(token, "keep it secret keep it safe", (err, decoded) => {
+		jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
 			if (err){
 				return res.status(401).json({
 					message: "token invalid"
