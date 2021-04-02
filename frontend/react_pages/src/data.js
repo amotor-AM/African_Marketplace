@@ -1,28 +1,34 @@
 //import product data from server here
 const data = [
     { 
-      name: 'Pear',
-      price: '$1',
-      id: 123,
+      product_id: Date.now(),
+      product_name: 'Apple',
+      seller_price: '10', 
+      qty: '500', 
       description: 'A delicious and healthy snack',
-      location: '',
-      category: 'Produce'
+      seller_name: 'Daniel', 
+      category: 'Produce',
+      location: 'Cairo',
     },
     { 
-      name: 'Apple',
-      price: '$2',
-      id: 456,
+      product_id: Date.now(),
+      product_name: 'Orange',
+      seller_price: '10', 
+      qty: '500', 
       description: 'A delicious and healthy snack',
-      location: '',
-      category: 'Produce'
+      seller_name: 'Daniel', 
+      category: 'Produce',
+      location: 'Cairo',
     },
     { 
-      name: 'Orange',
-      price: '$1',
-      id: 789,
+      product_id: Date.now(),
+      product_name: 'Tomato',
+      seller_price: '10', 
+      qty: '500', 
       description: 'A delicious and healthy snack',
-      location: '',
-      category: 'Produce'
+      seller_name: 'Daniel', 
+      category: 'Produce',
+      location: 'Cairo',
     },
   ]
 
