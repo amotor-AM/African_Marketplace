@@ -12,7 +12,7 @@ export default function RegisterForm() {
 
     const history = useHistory()
 
-    const handleChange = e => {
+    const handleRegisterChange = e => {
         setRegisterCreds({
         ...registercreds,
         [e.target.name]: e.target.value
@@ -33,7 +33,8 @@ export default function RegisterForm() {
             history.push('/') 
           })
           .catch(err => {
-            console.log('user registration failed', err)     
+            console.log('user registration failed', err) 
+            alert('unable to register, please try again')    
           })
         } 
     
@@ -54,7 +55,7 @@ export default function RegisterForm() {
                     type='text'
                     autoFocus
                     value={registercreds.user_name}
-                    onChange={handleChange}
+                    onChange={handleRegisterChange}
                     required/>
             </label>
 <br/>
@@ -64,7 +65,7 @@ export default function RegisterForm() {
                     name='password'
                     type='password'
                     value={registercreds.password}
-                    onChange={handleChange}
+                    onChange={handleRegisterChange}
                     required/>
            </label>
 <br/>
@@ -74,7 +75,7 @@ export default function RegisterForm() {
                     name='location'
                     type='text'
                     value={registercreds.location}
-                    onChange={handleChange}
+                    onChange={handleRegisterChange}
                     required/>
            </label>
            <label >

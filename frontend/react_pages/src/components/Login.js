@@ -11,7 +11,7 @@ export default function LoginForm() {
     /* const [password, setPassword] = useState('') */
     
 
-    const handleChange = e => {
+    const handleLoginChange = e => {
         setLoginCreds({
           ...logincreds,
           [e.target.name]: e.target.value
@@ -25,7 +25,7 @@ export default function LoginForm() {
             console.log('user signed in successfully', res.data, logincreds)
             localStorage.setItem('token', res.data.token)
             setTokenSuccess(true)
-            history.push('/product-list')
+            history.push('/marketplace')
           })
           .catch(err => {
             alert('incorrect username and/or password, please try again', err)
@@ -47,7 +47,7 @@ export default function LoginForm() {
                     type='text'
                     autoFocus
                     value={logincreds.user_name}
-                    onChange={handleChange}
+                    onChange={handleLoginChange}
                     required/>
             </label>
 <br/>
@@ -57,7 +57,7 @@ export default function LoginForm() {
                     name='password'
                     type='password'
                     value={logincreds.password}
-                    onChange={handleChange}
+                    onChange={handleLoginChange}
                     required/>
            </label>
 <br/>

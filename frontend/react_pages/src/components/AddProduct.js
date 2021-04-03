@@ -66,35 +66,30 @@ import axiosWithAuth from '../utils/axiosWithAuth'
           type='text' 
           name='product_name' 
           value={item.product_name}
-          placeholder='product name' 
           onChange={handleValueChanges}/>
       <label htmlFor='seller_name' style={{fontFamily: 'inter', fontWeight: 'bold'}}>Your Name:</label>
         <input style={{textAlign: 'center'}}
           type='text' 
           name='seller_name' 
           value='Adisa'
-          placeholder='your name' 
           onChange={handleValueChanges}/>    
       <label htmlFor='seller_price' style={{fontFamily: 'inter', fontWeight: 'bold'}}>Price:</label>    
         <input style={{textAlign: 'center'}}
           type='text' 
           name='seller_price' 
           value={item.seller_price}
-          placeholder='set price' 
           onChange={handleValueChanges}/>
       <label htmlFor='description' style={{fontFamily: 'inter', fontWeight: 'bold'}}>Description:</label>      
         <input style={{textAlign: 'center'}}
           type='text' 
           name='description' 
           value={item.description}
-          placeholder='description of product' 
           onChange={handleValueChanges}/>
        <label htmlFor='qty' style={{fontFamily: 'inter', fontWeight: 'bold'}}>Quantity in stock:</label>      
         <input style={{textAlign: 'center'}}
           type='text' 
           name='qty' 
           value={item.qty}
-          placeholder='set quantity in stock' 
           onChange={handleValueChanges}/>
       
       <label htmlFor='seller_price' style={{fontFamily: 'inter', fontWeight: 'bold'}}>Category:</label>    
@@ -102,14 +97,12 @@ import axiosWithAuth from '../utils/axiosWithAuth'
           type='text' 
           name='category_name' 
           value='Other'
-          placeholder='set price' 
           onChange={handleValueChanges}/>
       <label htmlFor='description' style={{fontFamily: 'inter', fontWeight: 'bold'}}>Location:</label>      
         <input style={{textAlign: 'center'}}
           type='text' 
           name='location' 
           value='Kinshasa'
-          placeholder='description of product' 
           onChange={handleValueChanges}/>
        
 

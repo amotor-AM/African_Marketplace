@@ -28,7 +28,7 @@ function App() {
         <Route exact path='/' component={Home}/>
         <Route path='/register' component={RegisterForm}/>
         <Route path='/marketplace' component={Marketplace}/>
-        <PrivateRoute path='/my-listings' component={ProductList}/>
+        <Route path='/my-listings' component={ProductList}/>
         <Route path='/new-listing' component={AddProduct}/>
       </Switch>
 
