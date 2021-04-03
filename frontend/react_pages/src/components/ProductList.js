@@ -13,12 +13,12 @@ const UserProductList = () => {
 
   return (
     <div>
-      <h2 style={{marginTop: '30px'}}>My Listings</h2>
+      <h2 style={{marginTop: '30px', marginBottom: '50px', color: 'white'}}>My Listings</h2>
       <div className="parents">
       {products.map(product => (
         <div className="children">
           <UserProductCard
-              name={product.name} 
+              product_name={product.product_name} 
               price={product.price} 
               description={product.description}
               category={product.category}

@@ -41,6 +41,9 @@ export default function RegisterForm() {
 
 
     return (
+      <div>
+      <h2 style={{marginTop: '30px', fontFamily: 'inter', color: 'white'}}>Become a member now!</h2>
+      <br></br>
         <div className="login">
             <form className='form' onSubmit={handleSubmit}>
                 <h1>Create Account</h1>
@@ -90,8 +93,9 @@ export default function RegisterForm() {
             
             </form>
         </div>
+        </div>
     )
-
+      
 }
 
 

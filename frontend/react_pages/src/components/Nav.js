@@ -19,22 +19,26 @@ return (
       <h3 style={{color: 'white', marginLeft: '15px', fontFamily: 'sans-serif', letterSpacing: '0.225em', fontSize: '15pt'}}>african marketplace</h3>
       <div className='nav-btns' style={{marginRight: '7%'}}>
       
+
+      <Link to= '/register' style={{textDecoration:'none'}}>
+      <button>Register</button>
+      </Link>
+
       <Link to= '/' style={{textDecoration:'none'}}>
-      <button>Home</button>
+      <button>Sign In</button>
       </Link>
 
       <Link to= '/marketplace' style={{textDecoration:'none'}}>
       <button>Marketplace</button>
       </Link>
 
-      <Link to= '/product-list' style={{textDecoration:'none'}}>
+      <Link to= '/my-listings' style={{textDecoration:'none'}}>
       <button>My listings</button>
       </Link>
 
-      <Link to= '/add-product' style={{textDecoration:'none'}}>
+      <Link to= '/new-listing' style={{textDecoration:'none'}}>
       <button>New Listing</button>
       </Link>
-      
       
       <button onClick={logout}>Sign Out</button>
       

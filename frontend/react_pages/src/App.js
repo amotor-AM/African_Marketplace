@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Home from './components/Home';
+import RegisterForm from './components/Register'
 import Marketplace from './components/Marketplace';
 import ProductList from './components/ProductList';
 import Nav from './components/Nav';
@@ -25,9 +26,10 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path='/' component={Home}/>
+        <Route path='/register' component={RegisterForm}/>
         <Route path='/marketplace' component={Marketplace}/>
-        <Route path='/product-list' component={ProductList}/>
-        <Route path='/add-product' component={AddProduct}/>
+        <PrivateRoute path='/my-listings' component={ProductList}/>
+        <Route path='/new-listing' component={AddProduct}/>
       </Switch>
 
     </div>

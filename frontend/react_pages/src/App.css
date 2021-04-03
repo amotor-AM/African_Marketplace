@@ -10,11 +10,20 @@
 
 body {
   margin: 0;
+  background-image: url('./components/assets/banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat; 
+	background-position: center;
+	background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
 }
 
 html {
   margin: 0 auto;
   text-align: center;
+  
 }
 
 .nav h3 {
@@ -119,39 +128,42 @@ html {
 .parent {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 50px;
   align-items: center;
   justify-content: center;
-  background-color: white;  
-  border-bottom: .1px dotted lightgrey;
+  margin: 0 auto;
 }
 
 .child {
   /* percent per item in row. 
   33% = limit to 3 per row. */
-  align-self: center;
-  margin-bottom: 10px;
+  background-color: white;
+  border-bottom: .5px dotted grey;
+  margin-right: 5px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  
+  
+  
 }
 
 .parents {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 50px;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .children {
-  flex: 0 0 18%;
-  margin-bottom: 10px;
+  background-color: white;
+  border-bottom: .5px dotted grey;
+  margin-right: 5px;
+  margin-left: 10px;
+  margin-bottom: 20px;
   
 }
 
 .add-cart {
-  display: flex;
-  align-content: center;
-  justify-content: space-evenly;
-  margin-left: 85px;
-  margin-right: 85px;
-  margin-bottom: 15px;
+  
+  margin-bottom: 25px;
 }

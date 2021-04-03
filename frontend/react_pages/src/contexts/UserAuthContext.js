@@ -11,7 +11,7 @@ export const UserProvider = (props) => {
   const [user, setUser] = useState('')
 
   //remove useEffect after login form is merged to main branch. only used for testing purposes
-  useEffect(() => {
+  /* useEffect(() => {
     getUser()
   }, []) 
 
@@ -23,7 +23,7 @@ export const UserProvider = (props) => {
     })
     .catch(err => console.log('unable to market retrieve user info', err));
   }
-
+ */
 
 
   return(
